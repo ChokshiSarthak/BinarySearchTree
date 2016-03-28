@@ -1,26 +1,32 @@
 #ifndef BST_H
 #define BST_H
 
+#include<limits.h>
 class bst {
 
- private:
+public:
     struct Node 
 
     {  
        Node *left;
        Node *right;
        int data;
-    }*root;
+    };
 
+    Node *root;
     void BuildTreeUtil(Node *node, int key);  
     void PrintInorderUtil(Node *node);
-public:
+    bool IsBstUtil(Node *node,int max, int min);
      bst();
 
     ~bst();
 
+    
     void BuildTree(int key);
     void PrintInorder();
+    bool IsBst();
+    Node *MinValue(Node *node);
+    Node *InorderSuccessor(Node *root, Node *node);
 
  };
 
